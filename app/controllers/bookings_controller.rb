@@ -14,8 +14,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params[:title, :description, :location, :date, :time])
-    @lesson = Lesson.find(params[:id])
+    @booking = Booking.new
+    @lesson = Lesson.find(params[:lesson_id])
     @booking.lesson = @lesson
     @booking.user = current_user
     if @booking.save
@@ -24,10 +24,4 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
-  # private
-
-  # def booking_params
-  #   params.require(:booking).permit(:user, :lesson)
-  # end
 end
