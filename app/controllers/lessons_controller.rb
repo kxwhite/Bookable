@@ -19,7 +19,9 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-    if @lesson.save
+    @lesson.user = current_user
+    @lesson.save!
+    if @lesson.save!
       redirect_to lesson_path(@lesson)
     else
       render :new
