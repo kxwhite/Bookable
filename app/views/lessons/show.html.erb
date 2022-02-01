@@ -1,0 +1,6 @@
+<h1>Book a new lesson</h1>
+
+<%= link_to "Book #{@lesson.title}",
+            lesson_path(@lesson, title: @lesson.title, description: @lesson.description, location: @lesson.location, date: @lesson.date, time: @lesson.time),
+            method: :post,
+            data: { confirm: "Are you sure?" } %>
