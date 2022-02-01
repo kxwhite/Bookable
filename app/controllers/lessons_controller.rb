@@ -3,6 +3,16 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
 
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(params[:lesson])
+  end
+
   def show
     @lesson = Lesson.find(params[:id])
   end
