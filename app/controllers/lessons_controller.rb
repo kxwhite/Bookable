@@ -1,20 +1,16 @@
 class LessonsController < ApplicationController
+  before_action :set_lesson, only: [:show, :edit, :update]
+
   def index
     @lessons = Lesson.all
   end
 
+  def show; end
 
-  def edit
-    @lesson = Lesson.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @lesson = Lesson.find(params[:id])
     @lesson.update(params[:lesson])
-  end
-
-  def show
-    @lesson = Lesson.find(params[:id])
   end
 
   def new
@@ -34,5 +30,9 @@ class LessonsController < ApplicationController
 
   def lesson_params
     params.require(:lesson).permit(:title, :description, :location, :date, :time)
+  end
+
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
   end
 end
