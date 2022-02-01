@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   resources :lessons, except: [:destroy]
 
-
   # just putting this here so we know the code for making the lessons page only visible after login
   get 'profile', to: 'pages#profile'
 end
