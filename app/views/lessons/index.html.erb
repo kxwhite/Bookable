@@ -2,7 +2,7 @@
 
 <% @lessons.each do |lesson| %>
   <div class="container">
-    <p><%= link_to "#{lesson.title}", lessons_path(@lesson)  %></p>
+    <p><%= link_to "#{lesson.title}", lesson_path(lesson)  %></p>
     <p><%= lesson.description %></p>
     <p><%= lesson.date %></p>
     <p><%= lesson.time %></p>
