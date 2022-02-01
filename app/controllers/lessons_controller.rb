@@ -7,6 +7,12 @@ class LessonsController < ApplicationController
 
   def show; end
 
+  def edit; end
+
+  def update
+    @lesson.update(params[:lesson])
+  end
+
   def new
     @lesson = Lesson.new
   end
