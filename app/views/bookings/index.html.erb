@@ -11,10 +11,10 @@
     <% @lessons_booked.each do |lesson|
       <div class="container">
         <p><%= link_to lesson.title, booking_path(booking)  %></p>
-        <p>Time: lesson.booking.time</p>
-        <p>Date: lesson.booking.date</p>
+        <p>Time: <%=  lesson.booking.time %></p>
+        <p>Date: <%=  lesson.booking.date %></p>
       </div>
-    <% end %> %>
+    <% end %>
 
   <h2>List of lessons created</h2>
 
