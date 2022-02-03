@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :lessons, except: [:destroy] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:index, :create]
   end
-
-  # just putting this here so we know the code for making the lessons page only visible after login
-  get 'profile', to: 'pages#profile'
 end

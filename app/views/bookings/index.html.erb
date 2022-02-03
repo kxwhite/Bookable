@@ -1,0 +1,25 @@
+<h1>My Profile</h1>
+
+  <h2>My details</h2>
+
+    <p>First name: <%= @user.first_name %></p>
+    <p>Last name: <%= @user.last_name %></p>
+    <p>Username: <%= @user.username %></p>
+
+  <h2>List of lessons booked</h2>
+
+    <% @lessons_booked.each do |lesson|
+      <div class="container">
+        <p><%= link_to lesson.title, booking_path(booking)  %></p>
+        <p>Time: lesson.booking.time</p>
+        <p>Date: lesson.booking.date</p>
+      </div>
+    <% end %> %>
+
+  <h2>List of lessons created</h2>
+
+    <% @lessons_created.each do |lesson|
+      <div class="container">
+        <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
+      </div>
+    <% end %> %>
