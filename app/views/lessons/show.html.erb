@@ -1,14 +1,16 @@
 <div class="container">
-  <p><%= @lesson.title %></p>
+  <h1><%= @lesson.title %></h1>
   <p><%= @lesson.description %></p>
   <p><%= @lesson.date %></p>
   <p><%= @lesson.time %></p>
   <p><%= @lesson.location %></p>
  </div>
 
-<h1>Book a new lesson</h1>
+ <%= link_to 'Edit', edit_lesson_path(@lesson) %>
+
+<h2>Book the lesson</h2>
 
 <%= link_to "Book #{@lesson.title}",
-            lesson_path(@lesson, title: @lesson.title, description: @lesson.description, location: @lesson.location, date: @lesson.date, time: @lesson.time),
+            lesson_bookings_path(@lesson, title: @lesson.title, description: @lesson.description, location: @lesson.location, date: @lesson.date, time: @lesson.time),
             method: :post,
             data: { confirm: "Are you sure?" } %>
