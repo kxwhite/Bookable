@@ -10,7 +10,9 @@ class LessonsController < ApplicationController
   def edit; end
 
   def update
-    @lesson.update(params[:lesson])
+    @lesson.update(lesson_params)
+    redirect_to lesson_path(@lesson)
+    flash[:notice] = "You have booked #{@lesson.title}"
   end
 
   def new
