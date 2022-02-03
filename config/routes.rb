@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :lessons, except: [:destroy] do
-    resources :bookings, only: [:index, :create]
+    resources :bookings, only: [:create]
   end
+
+  resources :bookings, only: [:index]
 end
