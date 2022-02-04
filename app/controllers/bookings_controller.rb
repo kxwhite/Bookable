@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @lessons_booked = current_user.bookings
     @lessons_created = current_user.lessons
