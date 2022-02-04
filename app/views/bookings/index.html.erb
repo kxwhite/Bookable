@@ -8,7 +8,7 @@
 
   <h2>List of lessons booked</h2>
 
-    <% @lessons_booked.each do |lesson|
+    <% @lessons_booked.each do |lesson| %>
       <div class="container">
         <p><%= link_to lesson.title, booking_path(booking)  %></p>
         <p>Time: <%=  lesson.booking.time %></p>
@@ -18,8 +18,8 @@
 
   <h2>List of lessons created</h2>
 
-    <% @lessons_created.each do |lesson|
+    <% @lessons_created.each do |lesson| %>
       <div class="container">
         <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
       </div>
-    <% end %> %>
+    <% end %>
