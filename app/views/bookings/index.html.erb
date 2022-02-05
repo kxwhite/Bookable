@@ -1,10 +1,13 @@
 <h1>My Profile</h1>
 
   <h2>My details</h2>
-    <div>
-      <p>First name: <%= @user.first_name %></p>
-      <p>Last name: <%= @user.last_name %></p>
-      <p>Username: <%= @user.username %></p>
+    <div class="card-profile" >
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-square-large" %>
+      <div class="card-profile-details">
+        <p>First name: <%= @user.first_name %></p>
+        <p>Last name: <%= @user.last_name %></p>
+        <p>Username: <%= @user.username %></p>
+      </div>
     </div>
 
   <h2>List of lessons booked</h2>
