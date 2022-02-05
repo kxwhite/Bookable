@@ -11,7 +11,7 @@
 
 <div class="container">
 <h2>Book the lesson</h2>
-  <%= simple_form_for(@lesson) do |f| %>
+  <%= simple_form_for [ @lesson, @booking ] do |f| %>
   <%= f.input :date %>
   <%= f.input :time %>
   <%= f.submit "Book lesson", class: "btn btn-primary" %>

@@ -13,39 +13,58 @@ Booking.destroy_all
 puts "Database is clean"
 
 puts "Creating 10 users"
-10.times do
-  user = User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    username: Faker::Lorem.unique.word,
-    email: Faker::Internet.email,
-    password: Faker::Internet.unique.password
-  )
-  puts "User #{user.id} is created"
-end
+john = User.create(
+  first_name: "John",
+  last_name: "Doe",
+  username: "johndoe",
+  email: "johndoe@lewagon.com",
+  password: "123456"
+)
+sam = User.create(
+  first_name: "Sam",
+  last_name: "Smith",
+  username: "samsmith",
+  email: "samsmith@lewagon.com",
+  password: "123456"
+)
+puts "#{User.count} users have been created"
+puts "Creating 5 lessons for each user"
 
-puts "Creating 20 lessons"
-20.times do
-  lesson = Lesson.create(
+5.times do
+  john_lesson = Lesson.create(
     title: Faker::Hobby.activity,
     description: Faker::Lorem.paragraph,
     location: Faker::Nation.capital_city,
-    user_id: rand(1..10)
+    user_id: john.id
   )
-  puts "Lesson #{lesson.id} is created"
-end
+  puts "Lesson #{john_lesson.id} is created"
+  sam_lesson = Lesson.create(
+    title: Faker::Hobby.activity,
+    description: Faker::Lorem.paragraph,
+    location: Faker::Nation.capital_city,
+    user_id: sam.id
+  )
+  puts "Lesson #{sam_lesson.id} is created"
+  puts "Done!"
 
-puts "Done!"
-
-puts "Creating 5 bookingss"
-5.times do
-  booking = Booking.create(
-    user_id: rand(1..10),
-    lesson_id: rand(1..20),
+  puts "Creating a booking"
+  john_booking = Booking.create(
+    user_id: john.id,
+    lesson_id: sam_lesson.id,
     date: Faker::Date.forward(days: 100),
     time: "#{rand(7..21)}h"
   )
-  puts "Booking #{booking.id} is created"
+  puts "Booking #{john_booking.id} is created"
+  sam_booking = Booking.create(
+    user_id: sam.id,
+    lesson_id: john_lesson.id,
+    date: Faker::Date.forward(days: 100),
+    time: "#{rand(7..21)}h"
+  )
+  puts "Booking #{sam_booking.id} is created"
+  puts "All done!"
 end
 
-puts "All done!"
+puts "#{User.count} users have been created"
+puts "#{Lesson.count} lessons have been created"
+puts "#{Booking.count} booking have been created"
