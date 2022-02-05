@@ -1,6 +1,119 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="main-content">
+      <div class="home-page-container">
+  <div class="banner">
+    <div class="banner-content">
+      <div class="title-font">
+        <h1 style="font-size:72px">Bookable</h1>
+      </div>
+    </div>
+  </div>
+  <div class="featured-lessons">
+    <div class="highlighted-lessons">
+      <h2>Our Featured Lessons</h2>
+    </div>
+    <div class="lessons-cards" data-sr-id="0" style="visibility: visible; opacity: 0;">
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/lessons/7"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644065832/640px-Chineselanguage.svg_vuibeg.png">
+             </a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Chinese</h2>
+        </div>
+      </div>
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/lessons/9"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644065852/ijf-03-1550476738-1550476738_m9qbqz.jpg"></a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Judo</h2>
+        </div>
+      </div>
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/lessons/10"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644065879/Coding-Becomes-Criminal_ytwztp.jpg"></a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Coding</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%#
+<div>
+  <p>Description of Bookable app</p>
+</div> %>
 
 <% if user_signed_in? %>
   <% current_user.email %>
 <% end %>
+
+<%# <div class="navbar navbar-expand-sm navbar-light navbar-bookable">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%# <% end %>
+
+
+<%# <div class="main-content">
+      <div class="home-page-container">
+  <div class="banner">
+    <div class="banner-content">
+      <div>
+        <h1>TROPIC LIKE IT'S HOT</h1>
+      </div>
+        <div id="typed-strings" class="typed-color" style="display: none;">
+          <p>RENT A HOUSE...?</p>
+          <p>RENT A VILLA...?</p>
+          <p>RENT AN <span style="text-decoration: underline">ISLAND</span></p>
+        </div>
+      <span id="typed">RENT AN <span style="text-decoration: underline">ISLAND</span></span><span class="typed-cursor">|</span><span class="typed-cursor">|</span>
+      <div class="search-bar">
+        <form action="/islands" accept-charset="UTF-8" method="get">
+          <input type="text" name="query" id="form-search-home" class="form_control form-search form-search-colour" placeholder="Search for Islands...">
+          <input type="submit" name="commit" value="Search" class="btn-search-home" data-disable-with="Search">
+</form>      </div>
+    </div>
+  </div>
+
+  <div class="featured-islands">
+    <div class="fave-islands">
+      <h2>OUR FAVOURITE ISLANDS</h2>
+    </div>
+    <div class="island-cards" data-sr-id="0" style="visibility: visible; opacity: 0;">
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/islands/7"><img src="https://res.cloudinary.com/dh6gdchfj/image/upload/viiq0c4nxum23zylcdx81qxarapz"></a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Bora Bora</h2>
+        </div>
+      </div>
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/islands/9"><img src="https://res.cloudinary.com/dh6gdchfj/image/upload/fmrcenlf7kg6y9mag82gbptlm4yj"></a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Sicily</h2>
+        </div>
+      </div>
+      <div class="fi-card">
+        <div class="fi-image">
+             <a href="/islands/10"><img src="https://res.cloudinary.com/dh6gdchfj/image/upload/wl40g0dzu3apsb5y1el73f3p9azi"></a>
+        </div>
+        <div class="fi-text">
+          <h2 class="fi-text-js text-center">Havelock</h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+    </div> %>
