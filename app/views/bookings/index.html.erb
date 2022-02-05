@@ -13,17 +13,23 @@
   <h2>List of lessons booked</h2>
 
     <% @lessons_booked.each do |booking| %>
-      <div class="container">
-        <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
-        <p>Time: <%=  booking.time %></p>
-        <p>Date: <%=  booking.date %></p>
+      <div class="card-profile-lesson">
+        <img src="https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg" alt="Rock Climbing">
+        <div class="card-profile-lesson-details">
+          <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
+          <p>Time: <%=  booking.time %></p>
+          <p>Date: <%=  booking.date %></p>
+        </div>
       </div>
     <% end %>
 
   <h2>List of lessons created</h2>
 
     <% @lessons_created.each do |lesson| %>
-      <div class="container">
+      <div class="card-profile-lesson">
+        <img src="https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg" alt="Rock Climbing">
+        <div class="card-profile-lesson-details">
         <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
+        </div>
       </div>
     <% end %>
