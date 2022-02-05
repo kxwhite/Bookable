@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @lesson.title %></h1>
   <p><%= @lesson.description %></p>
-  <p><%= @lesson.date %></p>
-  <p><%= @lesson.time %></p>
+  <%# <p><%= @lesson.date %></p>
+  <%# <p><%= @lesson.time %></p>
   <p><%= @lesson.location %></p>
   <%= link_to 'Edit', edit_lesson_path(@lesson) %>
 </div>
