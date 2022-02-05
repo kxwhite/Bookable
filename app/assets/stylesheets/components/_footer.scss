@@ -6,7 +6,10 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
