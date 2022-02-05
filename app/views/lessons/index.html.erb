@@ -1,9 +1,31 @@
 <h1>List of available lessons</h1>
 
-<% @lessons.each do |lesson| %>
-  <div class="container">
-    <p><%= link_to "#{lesson.title}", lesson_path(lesson)  %></p>
-    <p><%= lesson.description %></p>
-    <p><%= lesson.location %></p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card individual" style="width: 18rem;">
+      <% @lessons.each do |lesson| %>
+      <img class="card-img-top" src="https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg" alt="Rock Climbing">
+      <div class="card-body">
+        <h6>BEGINNER</h6>
+        <h4 class="card-title"><%= link_to "#{lesson.title.capitalize}", lesson_path(lesson) %></h4>
+        <p class="card-text"><%= lesson.description %></p>
+        <p class="card-text"><%= lesson.location %></p>
+      </div>
+      <div class="card-body">
+        <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644071971/rachel-mcdermott-0fN7Fxv1eWA-unsplash_v24j81.jpg", class: "card-avatar"%>
+        <h5 class="card-link">Sandra Carter</h5>
+        <a href="#" class="card-link">Entry Coach</a>
+      </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+
+
+<%# <% @lessons.each do |lesson| %>
+  <%# <div class="container"> %>
+    <%# <p><%= link_to "#{lesson.title}", lesson_path(lesson)  %></p>
+    <%# <p><%= lesson.description %></p>
+    <%# <p><%= lesson.location %></p>
+  <%# </div> %>
+<%# <% end %>
