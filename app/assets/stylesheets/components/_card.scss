@@ -1,8 +1,156 @@
+// img.card-avatar {
+//   width: 30px;
+//   height: 30px;
+//   size-adjust: 30px;
+//   border-radius: 50%;
+// }
+
+/* Lesson page cards*/
+.band {
+  width: 90%;
+  max-width: 1240px;
+  // margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+.card {
+  background: white;
+  font-family: 'Roboto', sans-serif;;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+}
+
+.card:hover {
+  text-decoration: none;
+  color: #161616;
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+img.level_1 {
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 8px;
+}
+
+.card article {
+  padding: 20px;
+}
+
+.card article {
+  padding: 20px;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card p {
+  flex-grow: 1;
+  line-height: 1.4;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* typography */
+.card h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  color: #2B7CF6;
+}
+
+.card p {
+  line-height: 1.4;
+  color: #444;
+}
+
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 0 1em 0;
+}
+
+.card .card-link {
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #161616;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  display: inline;
+}
+
 img.card-avatar {
   width: 30px;
   height: 30px;
   size-adjust: 30px;
   border-radius: 50%;
+}
+
+/* Thumbnail*/
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 8px 8px 0 0;
+}
+
+@media only screen and(min-width: 500px) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and(min-width: 850px) {
+  .band {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+// div.container {
+//   padding: 2rem;
+// }
+
+// div.container.grid {
+//   display: grid;
+//   gap: 1rem;
+//   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+//   grid-template-rows: auto;
+// }
+
+// div.container.individual {
+//   padding: 1rem;
+//   margin: 20px;
+// }
+
+h6 {
+  font-family: serif;
+  font-size: small;
+  font-weight: 700;
+  color: gray;
+  word-spacing: 4px;
 }
 
 .card-profile {

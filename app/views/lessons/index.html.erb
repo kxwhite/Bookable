@@ -1,15 +1,39 @@
-<h1>List of available lessons</h1>
+<div class="container">
+  <h1 class="lesson-title">List of available lessons</h1>
+    <div class="band">
+    <% @lessons.each do |lesson| %>
 
-<div class="row">
-  <div class="col-sm-6">
+      <div class="items">
+            <%= link_to (lesson), class: "card" do %>
+              <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644159081/Level_1_umvpwp.png", class: "level_1" %>
+              <div class="thumb" style="background-image: url(https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg);"></div>
+              <article>
+                <span>Beginner</span>
+                <h1><%= lesson.title.capitalize %></h1>
+                <p><%= lesson.description %></p>
+                <p><strong>Location: </strong><%= lesson.location %></p>
+                <div class="coach-info">
+                  <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644071971/rachel-mcdermott-0fN7Fxv1eWA-unsplash_v24j81.jpg", class: "card-avatar"%>
+                  <h5 class="card-link">Sandra Carter</h5>
+                </div>
+              </article>
+            <% end %>
+      </div>
+    <% end %>
+    </div>
+</div>
+
+
+<!--
+  <div class="container grid">
+    <% @lessons.each do |lesson| %>
     <div class="card individual" style="width: 18rem;">
-      <% @lessons.each do |lesson| %>
       <img class="card-img-top" src="https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg" alt="Rock Climbing">
       <div class="card-body">
         <h6>BEGINNER</h6>
         <h4 class="card-title"><%= link_to "#{lesson.title.capitalize}", lesson_path(lesson) %></h4>
         <p class="card-text"><%= lesson.description %></p>
-        <p class="card-text"><%= lesson.location %></p>
+        <p class="card-text"><strong>Location:</strong><%= lesson.location %></p>
       </div>
       <div class="card-body">
         <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644071971/rachel-mcdermott-0fN7Fxv1eWA-unsplash_v24j81.jpg", class: "card-avatar"%>
@@ -19,7 +43,9 @@
       <% end %>
     </div>
   </div>
-</div>
+-->
+
+
 
 
 <%# <% @lessons.each do |lesson| %>
