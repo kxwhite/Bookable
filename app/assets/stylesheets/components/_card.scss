@@ -162,6 +162,8 @@ h6 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 16px;
+  margin-bottom: 32px;;
 }
 
 .card-profile img {
@@ -170,7 +172,7 @@ h6 {
   object-fit: cover;
 }
 
-.card-product p {
+.card-profile p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -182,20 +184,11 @@ h6 {
   padding: 16px;
 }
 
-
-.lessons-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-.fi-card {
-  margin: 8px;
-}
-
 .card-profile-lesson {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 16px;
 }
 
 .card-profile-lesson > img {
@@ -210,11 +203,80 @@ h6 {
   margin: 0;
 }
 
-
 .card-profile-lesson .card-profile-lesson-details {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+/* Homepage cards*/
+
+.lessons-cards {
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.3s;
+}
+
+.featured-lessons {
+    display: flex;
+    margin-top: 90px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.featured-lessons img {
+    width: 400px;
+    height: 600px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.highlighted-lessons {
+    margin-bottom: 40px;
+    border-bottom: 4px solid #E7E7EA;
+    padding-bottom: 24px;
+}
+
+.fi-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    margin: 8px;
+}
+
+.fi-text {
+    margin-top: -190px;
+    z-index: 3;
+    position: relative;
+    background: linear-gradient(
+180deg
+, rgba(255,255,255,0) 0%, rgba(0,0,0,0.790354) 87%);
+    color: white;
+    width: 408px;
+    padding-bottom: 60px;
+    padding-top: 80px;
+    border-radius: 5px;
+}
+
+.fi-image img:hover {
+    // box-shadow: 0 0px 55px rgb(0 0 0 / 40%);
+    transform: translate(0px, -20px) scale(1.03);
+    z-index: 0;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
 }
