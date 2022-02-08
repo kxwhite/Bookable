@@ -7,6 +7,7 @@
     </div>
   </div>
 
+
   <div id="content-container">
     <div class="band">
       <% @lessons.each do |lesson| %>
@@ -30,20 +31,23 @@
       <% end %>
     </div>
 
+    <div id="map"
+      style="width: 100%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+
+
     <%# <div class="index-map-container" style="width: 100%; height: 600px;">
       <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644267822/markus-spiske-x3REnO9z7io-unsplash_tnv7zf.jpg", class: "map" %>
     <%# </div> %>
 
 
   </div>
-
 </div>
 
-    <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
 
 
 <!--

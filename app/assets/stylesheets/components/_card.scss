@@ -1,15 +1,9 @@
-// img.card-avatar {
-//   width: 30px;
-//   height: 30px;
-//   size-adjust: 30px;
-//   border-radius: 50%;
-// }
-
 /* Lesson page cards*/
 .band {
   width: 90%;
   max-width: 1240px;
   margin: 0 auto;
+  padding: 0px 30px;
 
   display: grid;
 
@@ -118,13 +112,13 @@ img.card-avatar {
 
 @media only screen and(min-width: 500px) {
   .band {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media only screen and(min-width: 850px) {
   .band {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
