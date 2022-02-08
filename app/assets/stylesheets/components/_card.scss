@@ -32,6 +32,16 @@ img.card-avatar {
   padding: 16px;
 }
 
+
+.lessons-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fi-card {
+  margin: 8px;
+}
+
 .card-profile-lesson {
   overflow: hidden;
   background: white;
