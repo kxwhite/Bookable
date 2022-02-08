@@ -32,6 +32,7 @@ img.card-avatar {
   padding: 16px;
 }
 
+
 .lessons-cards {
   display: flex;
   justify-content: space-between;
@@ -39,4 +40,31 @@ img.card-avatar {
 
 .fi-card {
   margin: 8px;
+}
+
+.card-profile-lesson {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-profile-lesson > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-profile-lesson p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-profile-lesson .card-profile-lesson-details {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
