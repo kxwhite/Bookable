@@ -9,7 +9,7 @@
 .band {
   width: 90%;
   max-width: 1240px;
-  // margin: 0 auto;
+  margin: 0 auto;
 
   display: grid;
 
@@ -124,7 +124,7 @@ img.card-avatar {
 
 @media only screen and(min-width: 850px) {
   .band {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
