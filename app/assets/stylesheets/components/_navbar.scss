@@ -1,8 +1,16 @@
 .navbar-bookable {
-  justify-content: space-between;
+  justify-self: flex-start;
   background: white;
   border-color: #6E88BD;
+  list-style: none;
 }
+
+// .sticky {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1020;
+// }
+
 
 .navbar-bookable .navbar-collapse {
   flex-grow: 0;

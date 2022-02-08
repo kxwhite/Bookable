@@ -13,11 +13,20 @@
       <ul
         class="navbar-nav me-auto">
         <% if user_signed_in? %>
+        <li>
+          <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Type to Search...">
+          </div>
+        </li>
         <li class="nav-item active">
           <%= link_to "Home", root_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Lessons", lessons_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add a lesson", new_lesson_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

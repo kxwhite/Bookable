@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @lessons_booked = current_user.bookings
+    @bookings_ordered = @lessons_booked.sort_by(&:date).reverse
     @lessons_created = current_user.lessons
     @user = current_user
   end
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.lesson = @lesson
     @booking.user = current_user
     if @booking.save
-      redirect_to lesson_path(@lesson)
+      redirect_to bookings_path
       flash[:notice] = "You have booked #{@lesson.title}"
     else
       render 'lessons/show'
