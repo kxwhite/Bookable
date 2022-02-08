@@ -182,16 +182,6 @@ h6 {
   padding: 16px;
 }
 
-
-.lessons-cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-.fi-card {
-  margin: 8px;
-}
-
 .card-profile-lesson {
   overflow: hidden;
   background: white;
@@ -210,11 +200,21 @@ h6 {
   margin: 0;
 }
 
-
 .card-profile-lesson .card-profile-lesson-details {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+/* Homepage cards*/
+
+.lessons-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fi-card {
+  margin: 8px;
 }
