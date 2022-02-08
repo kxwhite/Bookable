@@ -13,6 +13,12 @@
       <ul
         class="navbar-nav me-auto">
         <% if user_signed_in? %>
+        <li>
+          <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" placeholder="Type to Search...">
+          </div>
+        </li>
         <li class="nav-item active">
           <%= link_to "Home", root_path , class: "nav-link" %>
         </li>
