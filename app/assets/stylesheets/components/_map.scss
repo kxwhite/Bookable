@@ -1,13 +1,30 @@
-// .index-map-container {
-//   border-radius: 8px;
-//   position: fixed;
-//   width: 100%;
-//   left: 35%;
-//   top: 7vh;
-//   z-index: 0;
-// }
+#content-container{
+  display: flex;
+}
 
-// .col-8 {
-//   flex: 0 0 66.66666667%;
-//   max-width: 66.66666667%;
-// }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+@media only screen and(min-width: 100px) and (max-width: 499px) {
+  #map {
+    display: none;
+  }
+}
+
+@media only screen and(min-width: 500px) {
+  #map {
+    display: none;
+  }
+}
+
+@media only screen and(min-width: 1200px) {
+  #map {
+    display: block;
+  }
+}
