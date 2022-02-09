@@ -110,9 +110,15 @@ img.card-avatar {
   border-radius: 8px 8px 0 0;
 }
 
-@media only screen and(min-width: 500px) {
+@media only screen and(min-width: 100px) and (max-width: 499px) {
   .band {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and(min-width: 500px) {
+  .band {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
