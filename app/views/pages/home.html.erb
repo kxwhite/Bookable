@@ -1,19 +1,14 @@
-<div class="banner">
-  <div class="banner-content">
-    <div class="title-font">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url(https://res.cloudinary.com/drirexwsz/image/upload/v1644072856/f42bce09-2533-48fb-a9c4-8053aedf941b-798c36769d88.small_dr0usb.png);">
+  <div class="container">
+    <div class="banner-content">
       <h1>Bookable</h1>
-      <div class="search-bar">
-        <form action="/lessons" accept-charset="UTF-8" method="get">
-        <input type="text" name="query" id="input-search" class="form_control input-search" placeholder="Search for lessons...">
-        <input type="submit" name="commit" value="Search" class="btn-search" data-disable-with="Search">
-        </form>
-      </div>
-     </div>
+      <p>Change your life by learning a new skill!</p>
+      <%= link_to "Book your lesson now", new_user_registration_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
 
-<div class="container">
 
   <div class="featured-lessons">
     <div class="highlighted-lessons">

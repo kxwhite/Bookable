@@ -6,6 +6,12 @@ class LessonsController < ApplicationController
       @lessons = Lesson.search_by_title(params[:query])
     else
       @lessons = Lesson.all
+
+      @markers = @lessons.geocoded.map do |lesson|
+        {
+          lat: lesson.latitude,
+          lng: lesson.longitude
+        }
     end
   end
 
