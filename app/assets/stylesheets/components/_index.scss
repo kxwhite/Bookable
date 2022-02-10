@@ -9,6 +9,7 @@
 @import "banner";
 @import "show_banner";
 
+
 .search-box {
   display: inline-flex;
   position: relative;
@@ -29,3 +30,6 @@
   pointer-events: painted;
   font-family: "Work Sans", "Helvetica", "sans-serif";
 }
+
+@import "form";
+

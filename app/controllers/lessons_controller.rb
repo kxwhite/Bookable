@@ -12,6 +12,7 @@ class LessonsController < ApplicationController
           lat: lesson.latitude,
           lng: lesson.longitude
         }
+      end
     end
   end
 
