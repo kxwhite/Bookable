@@ -1,10 +1,15 @@
 <div class="main-container">
   <%# <h1 class="lesson-title">List of available lessons</h1> %>
   <div class="d-flex justify-content-center">
-    <div class="search-bar-box m-5">
-      <button class="btn-search-long"><i class="fas fa-search"></i></button>
-      <input type="text" class="input-search-box" placeholder="Type to Search...">
-    </div>
+          <div class="search-box">
+            <%= form_tag lessons_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            placeholder: "Find a lesson"
+            %>
+            <%= submit_tag "Search", class: "search-button" %>
+            <% end %>
+          </div>
   </div>
 
 

@@ -22,6 +22,7 @@
               <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
               <p><%=  booking.date %></p>
               <p><%=  booking.time.strftime("at %I:%M%p")   %></p>
+              <p><%=  booking.destroy %></p>
             </div>
           </div>
         <% end %>

@@ -13,22 +13,15 @@
       <ul
         class="navbar-nav me-auto">
         <% if user_signed_in? %>
-        <li>
-          <%# <div class="search-box">
-            <form action="/lessons" accept-charset="UTF-8" method="get">
-            <button class="btn-search"><i class="fas fa-search"></i></button>
-            <input type="text" name="query" class="input-search" id="form-search-home" placeholder="Type to Search...">
-            </form>
-          </div> %>
-          <%= form_tag lessons_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a lesson"
-          %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-          <% end %>
-        </li>
+          <div class="search-navbar">
+            <%= form_tag lessons_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            placeholder: "Find a lesson"
+            %>
+            <%= submit_tag "Search", class: "navbar-button" %>
+            <% end %>
+          </div>
         <li class="nav-item active">
           <%= link_to "Home", root_path , class: "nav-link" %>
         </li>
