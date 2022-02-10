@@ -42,13 +42,12 @@ class LessonsController < ApplicationController
     end
   end
 
-  private
+    def lesson_params
+      params.require(:lesson).permit(:title, :description, :location, :date, :time)
+    end
 
-  def lesson_params
-    params.require(:lesson).permit(:title, :description, :location, :date, :time)
-  end
-
-  def set_lesson
-    @lesson = Lesson.find(params[:id])
+    def set_lesson
+      @lesson = Lesson.find(params[:id])
+    end
   end
 end
