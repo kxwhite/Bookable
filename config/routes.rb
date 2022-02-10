@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index]
+  # added the below for search function
+  resources :lessons, only: [:index]
 end

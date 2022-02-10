@@ -2,13 +2,16 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update]
 
   def index
-    @lessons = Lesson.all
+    if params[:query].present?
+      @lessons = Lesson.search_by_title(params[:query])
+    else
+      @lessons = Lesson.all
 
-    @markers = @lessons.geocoded.map do |lesson|
-      {
-        lat: lesson.latitude,
-        lng: lesson.longitude
-      }
+      @markers = @lessons.geocoded.map do |lesson|
+        {
+          lat: lesson.latitude,
+          lng: lesson.longitude
+        }
     end
   end
 
