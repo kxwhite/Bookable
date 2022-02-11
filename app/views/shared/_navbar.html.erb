@@ -22,15 +22,17 @@
             <%= submit_tag "Search", class: "navbar-button" %>
             <% end %>
           </div>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path , class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Lessons", lessons_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Add a lesson", new_lesson_path, class: "nav-link" %>
-        </li>
+        <div class="navbar-nav-tabs">
+          <li class="nav-item">
+            <%= link_to "Home", root_path , class: "nav-link #{controller.controller_name == 'pages' ? 'active' : '' } " %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Lessons", lessons_path, class: "nav-link #{controller.controller_name == 'lessons' && controller.action_name == 'index' ? 'active' : ''}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a lesson", new_lesson_path, class: "nav-link #{controller.controller_name == 'lessons' && controller.action_name == 'new' ? 'active' : ''}" %>
+          </li>
+        </div>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
