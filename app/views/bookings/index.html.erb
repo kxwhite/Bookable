@@ -12,22 +12,30 @@
         </div>
       </div>
 
-    <h2>List of lessons booked</h2>
+    <ul class="nav nav-tabs">
+      <li class="active nav-item"><button class="nav-link active" data-toggle="tab" href="#home">Lessons booked</button></li>
+      <li class="nav-item"><button class="nav-link" data-toggle="tab" href="#menu1">Lessons created</button></li>
+    </ul>
 
-      <% @lessons_booked.each do |booking| %>
-        <div class="container">
-          <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
-          <p>Time: <%=  booking.time %></p>
-          <p>Date: <%=  booking.date %></p>
-        </div>
-      <% end %>
-
-    <h2>List of lessons created</h2>
-
-      <% @lessons_created.each do |lesson| %>
-        <div class="container">
-          <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
-        </div>
-      <% end %>
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade show active">
+        <h3>Lessons booked</h3>
+          <% @lessons_booked.each do |booking| %>
+            <div class="container">
+              <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
+              <p>Time: <%=  booking.time %></p>
+              <p>Date: <%=  booking.date %></p>
+            </div>
+          <% end %>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Lessons created</h3>
+          <% @lessons_created.each do |lesson| %>
+            <div class="container">
+              <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
+            </div>
+          <% end %>
+      </div>
+    </div>
 
 </div>
