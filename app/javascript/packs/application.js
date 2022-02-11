@@ -20,13 +20,15 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initNavbarActive } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  // initNavbarActive();
 });
