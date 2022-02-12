@@ -1,13 +1,15 @@
 <div class="main-container">
 
-  <h1 class="lesson-title">List of available lessons</h1>
+  <%# <div class="container">
+    <h1 class="lesson-title d-flex justify content center">List of available lessons</h1>
+  </div> %>
 
-  <form class="form-inline d-flex justify-content-center" action="/lessons">
+  <form class="form-inline d-flex justify-content-center my-5" action="/lessons">
       <div class="form-group">
         <label class="sr-only" for="search">Search:</label>
         <input type="text" class="form-control" id="params[:query]" placeholder="Find a lesson" name="query">
       </div>
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
     </form>
 
   <div id="content-container">
