@@ -25,6 +25,8 @@
               <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
               <p>Time: <%=  booking.time %></p>
               <p>Date: <%=  booking.date %></p>
+              <%= button_to "Cancel Booking", booking, method: :delete,
+              data: { turbo_confirm: "Are you sure you want to cancel #{booking.lesson.title}?"}%>
             </div>
           <% end %>
       </div>

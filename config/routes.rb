@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
   # added the below for search function
-  resources :lessons, only: [:index]
+  # resources :lessons, only: [:index]
 end
