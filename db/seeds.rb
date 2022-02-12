@@ -44,21 +44,21 @@ john_lesson_1 = Lesson.create(
   title: "Stand-up comedy",
   description: Faker::Lorem.paragraph,
   location: Faker::Nation.capital_city,
-  difficulty_level: beginner,
+  difficulty_level: "Beginner",
   user_id: john.id,
   picture_url: "https://res.cloudinary.com/drirexwsz/image/upload/v1644071258/stand-up-comedy-neon-sign_fz0onc.jpg"
 )
-puts "Lesson #{john_lesson.id} is created"
+puts "Lesson #{john_lesson_1.id} is created"
 
 john_lesson_2 = Lesson.create(
   title: "Book restoration",
   description: Faker::Lorem.paragraph,
   location: Faker::Nation.capital_city,
-  difficulty_level: intermediate,
+  difficulty_level: "Intermediate",
   user_id: john.id,
   picture_url: "https://res.cloudinary.com/drirexwsz/image/upload/v1644071520/Gian_6_oon9s8.jpg"
 )
-puts "Lesson #{john_lesson.id} is created"
+puts "Lesson #{john_lesson_2.id} is created"
 
 # john_lesson_3 = Lesson.create(
 #   title: Faker::Hobby.activity,
@@ -76,11 +76,11 @@ sam_lesson_1 = Lesson.create(
   title: "Gaming",
   description: Faker::Lorem.paragraph,
   location: Faker::Nation.capital_city,
-  difficulty_level: beginner,
+  difficulty_level: "Advanced",
   user_id: sam.id,
   picture_url: "https://res.cloudinary.com/drirexwsz/image/upload/v1644071201/acastro_190618_1777_cloud_gaming_0003.0_xcfq9w.jpg"
 )
-puts "Lesson #{sam_lesson.id} is created"
+puts "Lesson #{sam_lesson_1.id} is created"
 
 # sam_lesson_2 = Lesson.create(
 #   title: Faker::Hobby.activity,
@@ -116,7 +116,7 @@ john_booking_1 = Booking.create(
     date: Faker::Date.forward(days: 100),
     time: rand(7..21)
   )
-puts "Booking #{john_booking.id} is created"
+puts "Booking #{john_booking_1.id} is created"
 
 # john_booking_2 = Booking.create(
 #     user_id: john.id,
@@ -134,7 +134,7 @@ sam_booking_1 = Booking.create(
   date: Faker::Date.forward(days: 100),
   time: "#{rand(7..21)}h"
 )
-puts "Booking #{sam_booking.id} is created"
+puts "Booking #{sam_booking_1.id} is created"
 
 # sam_booking_2 = Booking.create(
 #   user_id: sam.id,

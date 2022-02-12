@@ -34,7 +34,7 @@
           </li>
         </div>
         <li class="nav-item dropdown">
-          <%= image_tag user.avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag current_user.avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
             <%# <%= link_to "My Lessons", "#", class: "dropdown-item" %>

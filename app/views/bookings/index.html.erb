@@ -4,7 +4,7 @@
 
     <h2>My details</h2>
       <div class="card-profile" >
-        <%= image_tag user.avatar_url, class: "avatar-square-large" %>
+        <%= image_tag current_user.avatar_url, class: "avatar-square-large" %>
         <div class="card-profile-details">
           <p>First name: <%= @user.first_name %></p>
           <p>Last name: <%= @user.last_name %></p>
