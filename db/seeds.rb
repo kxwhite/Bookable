@@ -38,7 +38,7 @@ puts "#{User.count} users have been created"
 
 # Lessons
 
-puts "Creating 2 lessons for user 1"
+puts "Creating 6 lessons for user 1"
 
 john_lesson_1 = Lesson.create(
   title: "Stand-up comedy",
@@ -54,21 +54,21 @@ john_lesson_2 = Lesson.create(
   title: "Book restoration",
   description: Faker::Lorem.paragraph,
   location: Faker::Nation.capital_city,
-  difficulty_level: "Intermediate",
+  difficulty_level: "Beginner",
   user_id: john.id,
   picture_url: "https://res.cloudinary.com/drirexwsz/image/upload/v1644071520/Gian_6_oon9s8.jpg"
 )
 puts "Lesson #{john_lesson_2.id} is created"
 
-# john_lesson_3 = Lesson.create(
-#   title: Faker::Hobby.activity,
-#   description: Faker::Lorem.paragraph,
-#   location: Faker::Nation.capital_city,
-#   difficulty_level: advanced,
-#   user_id: john.id,
-#   picture_url: "URL"
-# )
-# puts "Lesson #{john_lesson.id} is created"
+john_lesson_3 = Lesson.create(
+  title: "Climbing",
+  description: Faker::Lorem.paragraph,
+  location: Faker::Nation.capital_city,
+  difficulty_level: "Beginner",
+  user_id: john.id,
+  picture_url: "https://res.cloudinary.com/dbevdhp4h/image/upload/v1644674879/climbing_387899734_1000_asghb2.jpg"
+)
+puts "Lesson #{john_lesson_3.id} is created"
 
 puts "Creating 1 lessons for user 2"
 
@@ -76,39 +76,39 @@ sam_lesson_1 = Lesson.create(
   title: "Gaming",
   description: Faker::Lorem.paragraph,
   location: Faker::Nation.capital_city,
-  difficulty_level: "Advanced",
+  difficulty_level: "Beginner",
   user_id: sam.id,
   picture_url: "https://res.cloudinary.com/drirexwsz/image/upload/v1644071201/acastro_190618_1777_cloud_gaming_0003.0_xcfq9w.jpg"
 )
 puts "Lesson #{sam_lesson_1.id} is created"
 
-# sam_lesson_2 = Lesson.create(
-#   title: Faker::Hobby.activity,
-#   description: Faker::Lorem.paragraph,
-#   location: Faker::Nation.capital_city,
-#   difficulty_level: intermediate,
-#   user_id: sam.id,
-#   picture_url:"URL"
-# )
-# puts "Lesson #{sam_lesson.id} is created"
+sam_lesson_2 = Lesson.create(
+  title: "Horse riding",
+  description: Faker::Lorem.paragraph,
+  location: Faker::Nation.capital_city,
+  difficulty_level: "Beginner",
+  user_id: sam.id,
+  picture_url:"https://res.cloudinary.com/dbevdhp4h/image/upload/v1644674945/295230123_wvxjq1.jpg"
+)
+puts "Lesson #{sam_lesson_2.id} is created"
 
-# sam_lesson_3 = Lesson.create(
-#   title: Faker::Hobby.activity,
-#   description: Faker::Lorem.paragraph,
-#   location: Faker::Nation.capital_city,
-#   difficulty_level: advanced,
-#   user_id: sam.id,
-#   picture_url: "URL"
-# )
-# puts "Lesson #{sam_lesson.id} is created"
+sam_lesson_3 = Lesson.create(
+  title: "Ghost hunting",
+  description: Faker::Lorem.paragraph,
+  location: Faker::Nation.capital_city,
+  difficulty_level: "Beginner",
+  user_id: sam.id,
+  picture_url: "https://res.cloudinary.com/dbevdhp4h/image/upload/v1644675018/GettyImages_141339479_anqxp6.jpg"
+)
+puts "Lesson #{sam_lesson_3.id} is created"
 
-puts "All 3 lessons created!"
+puts "All 6 lessons created!"
 
 # Bookings
 
-puts "Creating 2 bookings"
+puts "Creating 4 bookings"
 
-puts "Creating 1 booking for user 1"
+puts "Creating 2 booking for user 1"
 
 john_booking_1 = Booking.create(
     user_id: john.id,
@@ -119,34 +119,34 @@ john_booking_1 = Booking.create(
 
 puts "Booking #{john_booking_1.id} is created"
 
-# john_booking_2 = Booking.create(
-#     user_id: john.id,
-#     lesson_id: sam_lesson.id,
-#     date: Faker::Date.forward(days: 100),
-#     time: rand(7..21)
-#   )
-# puts "Booking #{john_booking.id} is created"
+john_booking_2 = Booking.create(
+    user_id: john.id,
+    lesson_id: sam_lesson_2.id,
+    date: Faker::Date.forward(days: 100),
+    time: Time.now
+  )
+puts "Booking #{john_booking_2.id} is created"
 
-puts "Creating 1 bookings for user 2"
+puts "Creating 2 bookings for user 2"
 
 sam_booking_1 = Booking.create(
   user_id: sam.id,
   lesson_id: john_lesson_1.id,
   date: Faker::Date.forward(days: 100),
-  time: "#{rand(7..21)}h"
+  time: Time.now
 )
 puts "Booking #{sam_booking_1.id} is created"
 
-# sam_booking_2 = Booking.create(
-#   user_id: sam.id,
-#   lesson_id: john_lesson.id,
-#   date: Faker::Date.forward(days: 100),
-#   time: "#{rand(7..21)}h"
-# )
-# puts "Booking #{sam_booking.id} is created"
+sam_booking_2 = Booking.create(
+  user_id: sam.id,
+  lesson_id: john_lesson_2.id,
+  date: Faker::Date.forward(days: 100),
+  time: Time.now
+)
+puts "Booking #{sam_booking_2.id} is created"
 
 puts "All done!"
 
 puts "#{User.count} users have been created"
 puts "#{Lesson.count} lessons have been created"
-puts "#{Booking.count} booking have been created"
+puts "#{Booking.count} bookings have been created"
