@@ -9,8 +9,8 @@
 # Cleaning database
 
 puts "Cleaning up database"
-Booking.destroy_all
 Lesson.destroy_all
+Booking.destroy_all
 User.destroy_all
 puts "Database is clean"
 
