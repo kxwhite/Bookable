@@ -15,13 +15,19 @@
       <p><strong>Location: </strong><%= @lesson.location %></p>
     </div>
 
-    <div class="lesson-booking">
-    <h2>Book the lesson</h2>
-      <%= simple_form_for [ @lesson, @booking ] do |f| %>
-      <%= f.input :date %>
-      <%= f.input :time %>
-      <%= f.submit "Book lesson", class: "btn btn-primary" %>
-      <% end %>
+    <div class="container form-styled">
+      <div class="row">
+        <div class="col-12">
+          <div class="lesson-booking">
+          <h2 class="form-title">Book the lesson</h2>
+            <%= simple_form_for [ @lesson, @booking ] do |f| %>
+            <%= f.input :date %>
+            <%= f.input :time %>
+            <%= f.submit "Book lesson", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
