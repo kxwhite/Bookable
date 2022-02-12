@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
@@ -43,7 +43,19 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+      # raise
+      # @booking.lesson = @lesson
+    if @lesson.destroy
+      redirect_to bookings_path
+      flash[:notice] = "You have deleted #{@lesson.title}"
+    else
+      render 'bookings'
+    end
+  end
+
   private
+
     def lesson_params
       params.require(:lesson).permit(:title, :description, :location, :photo)
     end
