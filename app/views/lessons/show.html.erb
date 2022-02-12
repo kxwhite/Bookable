@@ -1,38 +1,34 @@
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg');">
-  <div class="container">
-    <div class="show-banner-content">
-      <%# <h1><%= @lesson.title.capitalize</h1> %>
-    </div>
-  </div>
+<div class="show-banner" style="background-image: url('<%= @lesson.picture_url %>')">
 </div>
 
-<div id="booking-main-container">
-  <div class="booking-container">
-    <div class="info-container">
-    <span class="booking-level">Beginner</span>
-      <h1><%= @lesson.title.capitalize %></h1>
-      <p><%= @lesson.description %></p>
-      <p><strong>Location: </strong><%= @lesson.location %></p>
-    </div>
+<div class="container">
 
-    <div class="lesson-booking">
-    <h2>Book the lesson</h2>
-      <%= simple_form_for [ @lesson, @booking ] do |f| %>
-      <%= f.input :date %>
-      <%= f.input :time %>
-      <%= f.submit "Book lesson", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+  <div id="booking-container">
 
-  <div id="map"
-    style="width: 50%; height: 75vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="info-container">
+        <span class="booking-level"><%= @lesson.difficulty_level %></span>
+        <h1><%= @lesson.title.capitalize %></h1>
+        <p><%= @lesson.description %></p>
+        <p><strong>Location: </strong><%= @lesson.location %></p>
+      </div>
+
+      <div class="booking-form">
+
+        <h2>Book the lesson</h2>
+
+        <div class="lesson-booking" id='lesson-booking-dates' data-unavailable="<%= @lesson.unavailable_dates.to_json %>">
+          <%= simple_form_for [ @lesson, @booking ] do |f| %>
+          <%= f.input :date, as: :string, type: :text %>
+          <%= f.input :time %>
+          <%= f.submit "Book lesson", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+
+      </div>
+
   </div>
 
 </div>
-
 
 
   <%# <%= link_to "Book #{@lesson.title}",

@@ -114,8 +114,9 @@ john_booking_1 = Booking.create(
     user_id: john.id,
     lesson_id: sam_lesson_1.id,
     date: Faker::Date.forward(days: 100),
-    time: rand(7..21)
+    time: Time.now
   )
+
 puts "Booking #{john_booking_1.id} is created"
 
 # john_booking_2 = Booking.create(
@@ -145,7 +146,6 @@ puts "Booking #{sam_booking_1.id} is created"
 # puts "Booking #{sam_booking.id} is created"
 
 puts "All done!"
-
 
 puts "#{User.count} users have been created"
 puts "#{Lesson.count} lessons have been created"
