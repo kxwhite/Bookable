@@ -23,17 +23,23 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+      # raise
+      # @booking.lesson = @lesson
+    if @booking.destroy
+      redirect_to bookings_path
+      flash[:notice] = "You have cancelled #{@booking.lesson.title}"
+    else
+      render 'bookings'
+    end
+  end
+
   private
 
   def booking_params
      params.require(:booking).permit(:date, :time)
   end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
 
-      # no need for app/views/restaurants/destroy.html.erb
-    redirect_to bookings_path
-  end
 end
