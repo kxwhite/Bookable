@@ -52,7 +52,7 @@ puts "Creating 5 lessons for each user"
     user_id: john.id,
     lesson_id: sam_lesson.id,
     date: Faker::Date.forward(days: 100),
-    time: "#{rand(7..21)}h"
+    time: rand(7..21)
   )
   puts "Booking #{john_booking.id} is created"
   sam_booking = Booking.create(

@@ -2,7 +2,18 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update]
 
   def index
-    @lessons = Lesson.all
+    if params[:query].present?
+      @lessons = Lesson.search_by_title(params[:query])
+    else
+      @lessons = Lesson.all
+
+      @markers = @lessons.geocoded.map do |lesson|
+        {
+          lat: lesson.latitude,
+          lng: lesson.longitude
+        }
+      end
+    end
   end
 
   def show
@@ -33,12 +44,11 @@ class LessonsController < ApplicationController
   end
 
   private
+    def lesson_params
+      params.require(:lesson).permit(:title, :description, :location, :date, :time)
+    end
 
-  def lesson_params
-    params.require(:lesson).permit(:title, :description, :location, :date, :time)
-  end
-
-  def set_lesson
-    @lesson = Lesson.find(params[:id])
-  end
+    def set_lesson
+      @lesson = Lesson.find(params[:id])
+    end
 end

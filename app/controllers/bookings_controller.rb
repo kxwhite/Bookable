@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @lessons_booked = current_user.bookings
+    @bookings_ordered = @lessons_booked.sort_by(&:date)
     @lessons_created = current_user.lessons
     @user = current_user
   end
@@ -25,6 +26,14 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :time)
+     params.require(:booking).permit(:date, :time)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+
+      # no need for app/views/restaurants/destroy.html.erb
+    redirect_to bookings_path
   end
 end
