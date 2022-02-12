@@ -24,7 +24,7 @@ john = User.create(
   username: "johndoe",
   email: "johndoe@lewagon.com",
   password: "123456",
-  avatar_url:
+  avatar_url: "URL"
 )
 sam = User.create(
   first_name: "Sam",
@@ -32,7 +32,7 @@ sam = User.create(
   username: "samsmith",
   email: "samsmith@lewagon.com",
   password: "123456",
-  avatar_url:
+  avatar_url: "URL"
 )
 puts "#{User.count} users have been created"
 
@@ -46,7 +46,7 @@ john_lesson_1 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: beginner,
   user_id: john.id,
-  picture_url:
+  picture_url: "URL"
 )
 puts "Lesson #{john_lesson.id} is created"
 
@@ -56,7 +56,7 @@ john_lesson_2 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: intermediate,
   user_id: john.id,
-  picture_url:
+  picture_url: "URL"
 )
 puts "Lesson #{john_lesson.id} is created"
 
@@ -66,7 +66,7 @@ john_lesson_3 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: advanced,
   user_id: john.id,
-  picture_url:
+  picture_url: "URL"
 )
 puts "Lesson #{john_lesson.id} is created"
 
@@ -78,7 +78,7 @@ sam_lesson_1 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: beginner,
   user_id: sam.id,
-  picture_url:
+  picture_url: "URL"
 )
 puts "Lesson #{sam_lesson.id} is created"
 
@@ -88,7 +88,7 @@ sam_lesson_2 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: intermediate,
   user_id: sam.id,
-  picture_url:
+  picture_url:"URL"
 )
 puts "Lesson #{sam_lesson.id} is created"
 
@@ -98,7 +98,7 @@ sam_lesson_3 = Lesson.create(
   location: Faker::Nation.capital_city,
   difficulty_level: advanced,
   user_id: sam.id,
-  picture_url:
+  picture_url: "URL"
 )
 puts "Lesson #{sam_lesson.id} is created"
 
