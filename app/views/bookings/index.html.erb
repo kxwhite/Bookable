@@ -18,26 +18,40 @@
     </ul>
 
     <div class="tab-content">
+
       <div id="home" class="tab-pane fade show active">
         <h3>Lessons booked</h3>
-          <% @lessons_booked.each do |booking| %>
-            <div class="container">
-              <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
-              <p>Time: <%=  booking.time %></p>
-              <p>Date: <%=  booking.date %></p>
-              <%= button_to "Cancel Booking", booking, method: :delete,
-              data: { turbo_confirm: "Are you sure you want to cancel #{booking.lesson.title}?"}%>
-            </div>
-          <% end %>
+          <div class="cards-profile-lesson">
+            <% @lessons_booked.each do |booking| %>
+              <div class="card-profile-lesson">
+                <img class="img" src='<%= booking.lesson.picture_url %>'>
+                <div class="card-profile-lesson-details">
+                  <p><%= link_to booking.lesson.title, lesson_path(booking.lesson)  %></p>
+                  <p><%=  booking.time.strftime("at %I:%M %p")  %></p>
+                  <p><%=  booking.date %></p>
+                  <%= button_to "Cancel Booking", booking, method: :delete,
+                  data: { turbo_confirm: "Are you sure you want to cancel #{booking.lesson.title}?"}, class: "btn btn-danger"%>
+                </div>
+              </div>
+            <% end %>
+          </div>
       </div>
+
       <div id="menu1" class="tab-pane fade">
         <h3>Lessons created</h3>
-          <% @lessons_created.each do |lesson| %>
-            <div class="container">
-              <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
-            </div>
-          <% end %>
+          <div class="cards-profile-lesson">
+            <% @lessons_created.each do |lesson| %>
+              <div class="card-profile-lesson">
+                <img class="img" src='<%= lesson.picture_url %>'>
+                <div class="card-profile-lesson-details">
+                  <p><%= link_to lesson.title, lesson_path(lesson)  %></p>
+                  <p><%= link_to "Edit", edit_lesson_path(lesson), class: "btn btn-info"  %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
       </div>
+
     </div>
 
 </div>
