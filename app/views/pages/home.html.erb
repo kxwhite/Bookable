@@ -19,10 +19,13 @@
       <h2>Our Featured Lessons</h2>
     </div>
     <div class="lessons-cards">
+    <% if user_signed_in? %>
       <div class="fi-card">
         <div class="fi-image">
-              <a href="/lessons/7"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071258/stand-up-comedy-neon-sign_fz0onc.jpg">
-              </a>
+            <%= link_to lessons_path do %>
+              <%= image_tag "https://res.cloudinary.com/drirexwsz/image/upload/v1644071258/stand-up-comedy-neon-sign_fz0onc.jpg" %>
+            <% end %>
+            <%# <a href="/lessons/7"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071258/stand-up-comedy-neon-sign_fz0onc.jpg"></a> %>
         </div>
         <div class="fi-text">
           <h2 class="fi-text-js text-center">Stand-up Comedy</h2>
@@ -30,7 +33,10 @@
       </div>
       <div class="fi-card">
         <div class="fi-image">
-              <a href="/lessons/9"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071520/Gian_6_oon9s8.jpg"></a>
+          <%= link_to lessons_path do %>
+            <%= image_tag "https://res.cloudinary.com/drirexwsz/image/upload/v1644071520/Gian_6_oon9s8.jpg" %>
+          <% end %>
+          <%# <a href="/lessons/9"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071520/Gian_6_oon9s8.jpg"></a> %>
         </div>
         <div class="fi-text">
           <h2 class="fi-text-js text-center">Book Restoration</h2>
@@ -38,12 +44,18 @@
       </div>
       <div class="fi-card">
         <div class="fi-image">
-              <a href="/lessons/10"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071201/acastro_190618_1777_cloud_gaming_0003.0_xcfq9w.jpg"></a>
+          <%= link_to lessons_path do %>
+            <%= image_tag "https://res.cloudinary.com/drirexwsz/image/upload/v1644071201/acastro_190618_1777_cloud_gaming_0003.0_xcfq9w.jpg" %>
+          <% end %>
+          <%# <a href="/lessons/10"><img src="https://res.cloudinary.com/drirexwsz/image/upload/v1644071201/acastro_190618_1777_cloud_gaming_0003.0_xcfq9w.jpg"></a> %>
         </div>
         <div class="fi-text">
           <h2 class="fi-text-js text-center">Gaming</h2>
         </div>
       </div>
+      <% else %>
+        <%= flash[:notice] = "Please sign in" %>
+      <% end %>
     </div>
   </div>
 </div>
