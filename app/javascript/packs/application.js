@@ -20,7 +20,6 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import flatpickr from "flatpickr";
 
 
 // Internal imports, e.g:
