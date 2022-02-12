@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_02_12_101627) do
     t.bigint "lesson_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "date"
+    t.date "date"
     t.time "time"
     t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
