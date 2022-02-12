@@ -20,7 +20,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
           </form>
-        <div class="navbar-nav-tabs">
+        <%# <div class="navbar-nav-tabs"> %>
           <li class="nav-item">
             <%= link_to "Home", root_path , class: "nav-link #{controller.controller_name == 'pages' ? 'active' : '' } " %>
           </li>
@@ -30,7 +30,7 @@
           <li class="nav-item">
             <%= link_to "Add a lesson", new_lesson_path, class: "nav-link #{controller.controller_name == 'lessons' && controller.action_name == 'new' ? 'active' : ''}" %>
           </li>
-        </div>
+        <%# </div> %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
