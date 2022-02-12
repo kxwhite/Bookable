@@ -20,7 +20,7 @@
         <div class="items">
           <%= link_to (lesson), class: "card" do %>
             <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644159081/Level_1_umvpwp.png", class: "level_1" %>
-            <div class="thumb" style="background-image: <%= lesson.picture_url %>"></div>
+            <div class="thumb" style="background-image: <%= lesson.picture_url %>;"></div>
             <article>
               <span><%= lesson.difficulty_level %></span>
               <h1><%= lesson.title.capitalize %></h1>
