@@ -19,7 +19,7 @@
 
         <div class="items">
           <%= link_to (lesson), class: "card" do %>
-            <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644159081/Level_1_umvpwp.png", class: "level_1" %>
+            <%= image_tag lesson.picture_url, class: "level_1" %>
             <div class="thumb" style="background-image: url(https://res.cloudinary.com/dab0abars/image/upload/v1644071771/sabrina-wendl-h2NlwNkA2h8-unsplash_oyzmw1.jpg);"></div>
             <article>
               <span>Beginner</span>
@@ -27,7 +27,7 @@
               <p><%= lesson.description %></p>
               <p><strong>Location: </strong><%= lesson.location %></p>
               <div class="coach-info">
-                <%= image_tag "https://res.cloudinary.com/dab0abars/image/upload/v1644071971/rachel-mcdermott-0fN7Fxv1eWA-unsplash_v24j81.jpg", class: "card-avatar"%>
+                <%= image_tag lesson.user.avatar_url, class: "card-avatar"%>
                 <h5 class="card-link">Sandra Carter</h5>
               </div>
             </article>
