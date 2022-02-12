@@ -36,7 +36,7 @@
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
             <%# <%= link_to "My Lessons", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item mb-0" %>
           </div>
         </li>
         <% else %>
