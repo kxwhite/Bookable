@@ -12,7 +12,7 @@ Lesson.destroy_all
 User.destroy_all
 puts "Database is clean"
 
-puts "Creating 10 users"
+puts "Creating 2 users"
 john = User.create(
   first_name: "John",
   last_name: "Doe",
@@ -31,6 +31,7 @@ puts "#{User.count} users have been created"
 puts "Creating 5 lessons for each user"
 
 5.times do
+
   john_lesson = Lesson.create(
     title: Faker::Hobby.activity,
     description: Faker::Lorem.paragraph,
@@ -38,6 +39,7 @@ puts "Creating 5 lessons for each user"
     user_id: john.id
   )
   puts "Lesson #{john_lesson.id} is created"
+
   sam_lesson = Lesson.create(
     title: Faker::Hobby.activity,
     description: Faker::Lorem.paragraph,
@@ -48,20 +50,23 @@ puts "Creating 5 lessons for each user"
   puts "Done!"
 
   puts "Creating a booking"
-  john_booking = Booking.create(
+
+  john_booking = Booking.create!(
     user_id: john.id,
     lesson_id: sam_lesson.id,
     date: Faker::Date.forward(days: 100),
-    time: rand(7..21)
+    time: Time.now
   )
   puts "Booking #{john_booking.id} is created"
-  sam_booking = Booking.create(
+
+  sam_booking = Booking.create!(
     user_id: sam.id,
     lesson_id: john_lesson.id,
     date: Faker::Date.forward(days: 100),
-    time: "#{rand(7..21)}h"
+    time: Time.now
   )
   puts "Booking #{sam_booking.id} is created"
+
   puts "All done!"
 end
 

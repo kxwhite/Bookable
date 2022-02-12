@@ -20,13 +20,15 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
 
-    markers.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);
-    });
+    if (markers) {
+      markers.forEach((marker) => {
+        new mapboxgl.Marker()
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(map);
+      });
 
-    fitMapToMarkers(map, markers);
+      fitMapToMarkers(map, markers);
+    }
   }
 };
 

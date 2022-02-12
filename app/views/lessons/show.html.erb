@@ -15,10 +15,11 @@
       <p><strong>Location: </strong><%= @lesson.location %></p>
     </div>
 
-    <div class="lesson-booking">
-    <h2>Book the lesson</h2>
+<h2>Book the lesson</h2>
+
+    <div class="lesson-booking" id='lesson-booking-dates' data-unavailable="<%= @lesson.unavailable_dates.to_json %>">
       <%= simple_form_for [ @lesson, @booking ] do |f| %>
-      <%= f.input :date %>
+      <%= f.input :date, as: :string, type: :text %>
       <%= f.input :time %>
       <%= f.submit "Book lesson", class: "btn btn-primary" %>
       <% end %>
