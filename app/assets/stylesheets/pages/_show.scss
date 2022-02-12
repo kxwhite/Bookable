@@ -1,14 +1,19 @@
 /* Page Container */
-#booking-main-container {
+#booking-container {
   display: flex;
   padding-right: 0px;
   margin-right: 0px;
   margin-top: 60px;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 60px 150px;
 }
 
-.booking-container {
-  margin: 60px 150px;
+.info-container {
+  padding: 16px;
+}
+
+.booking-form {
+  padding: 16 px;
 }
 
 /* Info */
